@@ -1,11 +1,12 @@
 ---
 title: Sqlmap使用笔记
-date: 2022-05-12 18:49:17
 tags:
-    - note
-    - sqlmap
+  - note
+  - sqlmap
 categories:
-    - 技术记录
+  - 技术记录
+abbrlink: 80dcdc36
+date: 2022-05-12 18:49:17
 ---
 
 记录一下sqlmap的（非常基础的）知识啥的

@@ -1,11 +1,12 @@
 ---
 title: Ubuntu终端命令笔记
-date: 2022-01-19 12:55:11
 tags:
-    - ubuntu
-    - note
+  - ubuntu
+  - note
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: c327a
+date: 2022-01-19 12:55:11
 ---
 
 Ubuntu终端命令相关笔记

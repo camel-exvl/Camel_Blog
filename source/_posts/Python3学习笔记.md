@@ -1,11 +1,12 @@
 ---
 title: Python3学习笔记
-date: 2022-08-24 11:12:51
 tags:
-    - python
-    - note
+  - python
+  - note
 categories:
-    - 学习笔记
+  - 学习笔记
+abbrlink: 74750f23
+date: 2022-08-24 11:12:51
 ---
 
 Python3学习笔记

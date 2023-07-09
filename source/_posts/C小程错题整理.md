@@ -1,10 +1,11 @@
 ---
 title: C小程错题整理
-date: 2022-01-07 13:24:33
 tags:
-    - c
+  - c
 categories:
-    - 学习笔记
+  - 学习笔记
+abbrlink: d47abb0d
+date: 2022-01-07 13:24:33
 ---
 C小程的错题整理
 

@@ -27,6 +27,12 @@ jobs:
         run: npm install
       - name: Install fluid
         run: npm install --save hexo-theme-fluid
+      - name: Install abbrlink
+        run: npm install hexo-abbrlink --save
+      - name: Uninstall hexo-renderer-marked
+        run: npm un hexo-renderer-marked --save
+      - name: Install hexo-renderer-markdown-it
+        run: npm i hexo-renderer-markdown-it --save
       - name: Build
         run: npm run build
       - name: Deploy

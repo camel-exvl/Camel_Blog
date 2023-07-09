@@ -1,10 +1,11 @@
 ---
 title: Ubuntu默认图片查看器打开jpg图片出错
-date: 2022-02-02 22:01:38
 tags:
-    - ubuntu
+  - ubuntu
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: 4a4a39bc
+date: 2022-02-02 22:01:38
 ---
 
 图片文件无法打开问题

@@ -1,11 +1,12 @@
 ---
 title: Ubuntu设置充电上限
-date: 2022-07-18 16:25:37
 tags:
-    - ubuntu
-    - battery
+  - ubuntu
+  - battery
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: 400346f0
+date: 2022-07-18 16:25:37
 ---
 
 在Windows下，天选2可以直接在华硕服务中设置充电上限，所以在ubuntu下也有了这个需求。

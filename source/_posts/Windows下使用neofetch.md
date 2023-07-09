@@ -1,11 +1,12 @@
 ---
 title: Windows下使用neofetch
-date: 2022-07-30 16:46:02
 tags:
-    - windows
-    - neofetch
+  - windows
+  - neofetch
 categories:
-    - Windows
+  - Windows
+abbrlink: d1aa9b96
+date: 2022-07-30 16:46:02
 ---
 
 闲得无聊在Windows下也整个neofetch

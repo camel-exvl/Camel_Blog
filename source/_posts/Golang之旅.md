@@ -1,11 +1,12 @@
 ---
 title: Golang之旅
-date: 2022-01-19 11:42:14
 tags:
-    - golang
-    - note
+  - golang
+  - note
 categories:
-    - 学习笔记
+  - 学习笔记
+abbrlink: 53568ebe
+date: 2022-01-19 11:42:14
 ---
 
 Golang学习笔记

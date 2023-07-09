@@ -1,10 +1,11 @@
 ---
 title: CMake的使用基础
-date: 2022-04-23 13:14:41
 tags:
-    - cmake
+  - cmake
 categories:
-    - 技术记录
+  - 技术记录
+abbrlink: 1265d780
+date: 2022-04-23 13:14:41
 ---
 做C大程的时候研究了一下cmake的用法
 下面是CMakeLists.txt的基础写法

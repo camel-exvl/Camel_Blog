@@ -1,10 +1,11 @@
 ---
 title: Ubuntu无法识别无线网卡
-date: 2022-02-05 12:31:00
 tags:
-    - ubuntu
+  - ubuntu
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: bdeaf517
+date: 2022-02-05 12:31:00
 ---
 
 安装Ubuntu后惊奇地发现莫的Wi-Fi

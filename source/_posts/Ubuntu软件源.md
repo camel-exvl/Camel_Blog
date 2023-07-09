@@ -1,10 +1,11 @@
 ---
 title: Ubuntu软件源
-date: 2022-07-16 16:15:42
 tags:
-    - ubuntu
+  - ubuntu
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: d3324647
+date: 2022-07-16 16:15:42
 ---
 
 之前源文件被我改得乱七八糟，现在重新恢复为官方源文件，顺便做个备份。

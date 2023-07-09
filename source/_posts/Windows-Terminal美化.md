@@ -1,11 +1,12 @@
 ---
 title: Windows Terminal美化
-date: 2022-07-30 17:08:14
 tags:
-    - windows
-    - terminal
+  - windows
+  - terminal
 categories:
-    - Windows
+  - Windows
+abbrlink: f7a47aab
+date: 2022-07-30 17:08:14
 ---
 
 适当的美化可以使Windows Terminal变得同样赏心悦目。

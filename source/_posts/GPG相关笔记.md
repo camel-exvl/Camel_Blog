@@ -1,10 +1,11 @@
 ---
 title: GPG相关笔记
-date: 2022-02-02 22:13:29
 tags:
-    - gpg
+  - gpg
 categories:
-    - 技术记录
+  - 技术记录
+abbrlink: 9081eade
+date: 2022-02-02 22:13:29
 ---
 
 GPG相关笔记

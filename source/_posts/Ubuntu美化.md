@@ -1,11 +1,12 @@
 ---
 title: Ubuntu美化
-date: 2022-01-14 23:22:09
 tags:
-    - ubuntu
-    - gnome
+  - ubuntu
+  - gnome
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: 4d7d1fbc
+date: 2022-01-14 23:22:09
 ---
 
 默认的主题有点丑 需要亿点点美化

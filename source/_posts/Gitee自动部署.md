@@ -1,11 +1,12 @@
 ---
 title: Gitee自动部署
-date: 2022-07-16 22:30:00
 tags:
-    - gitee
-    - github
+  - gitee
+  - github
 categories:
-    - 技术记录
+  - 技术记录
+abbrlink: 38df26a2
+date: 2022-07-16 22:30:00
 ---
 
 众所周知 Gitee自动部署功能是Gitee Pages Pro的功能。

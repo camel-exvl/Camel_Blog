@@ -1,10 +1,11 @@
 ---
 title: Ubuntu控制笔记本性能释放
-date: 2022-06-18 20:18:08
 tags:
-    - ubuntu
+  - ubuntu
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: ee10d497
+date: 2022-06-18 20:18:08
 ---
 
 在使用Ubuntu时发现性能无法得到完全释放，风扇转速也十分有限。

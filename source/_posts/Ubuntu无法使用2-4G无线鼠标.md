@@ -1,11 +1,12 @@
 ---
 title: Ubuntu无法使用2.4G无线鼠标
-date: 2022-07-18 18:27:16
 tags:
-    - ubuntu
-    - wireless mouse
+  - ubuntu
+  - wireless mouse
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: c30d67ca
+date: 2022-07-18 18:27:16
 ---
 
 由于最近电脑蓝牙不太稳定，想使用2.4G无线鼠标，但是没有反应。

@@ -1,11 +1,12 @@
 ---
 title: C++学习笔记
-date: 2022-12-11 14:43:00
 tags:
-    - c++
-    - note
+  - c++
+  - note
 categories:
-    - 学习笔记
+  - 学习笔记
+abbrlink: ad4f1e09
+date: 2022-12-11 14:43:00
 ---
 
 ## Template

@@ -1,11 +1,12 @@
 ---
 title: Ubuntu下无法使用EasyConnect
-date: 2022-02-02 21:59:40
 tags:
-    - easyconnect
-    - ubuntu
+  - easyconnect
+  - ubuntu
 categories:
-    - Ubuntu
+  - Ubuntu
+abbrlink: 902eae3
+date: 2022-02-02 21:59:40
 ---
 
 EasyConnect问题

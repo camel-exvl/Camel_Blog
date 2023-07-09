@@ -1,10 +1,11 @@
 ---
 title: 部分笔记搬迁至note页面
-date: 2023-07-09 11:04:51
 tags:
-    - mkdocs
+  - mkdocs
 categories:
-    - 说明
+  - 说明
+abbrlink: ccf01dfa
+date: 2023-07-09 11:04:51
 ---
 
 由于博客分类较为混乱，因此将部分笔记迁移至note页面

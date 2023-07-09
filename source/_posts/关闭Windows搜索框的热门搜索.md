@@ -1,10 +1,11 @@
 ---
 title: 关闭Windows搜索框的热门搜索
-date: 2023-02-21 15:15:43
 tags:
   - windows
 categories:
   - Windows
+abbrlink: 9fd7eb26
+date: 2023-02-21 15:15:43
 ---
 
 不知道什么时候开始win10搜索框右下角出现了一个热门搜索的广告。

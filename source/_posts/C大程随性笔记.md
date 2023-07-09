@@ -1,11 +1,12 @@
 ---
 title: C大程随性笔记
-date: 2022-02-22 22:31:04
 tags:
-    - c
-    - note
+  - c
+  - note
 categories:
-    - 学习笔记
+  - 学习笔记
+abbrlink: d4742bd0
+date: 2022-02-22 22:31:04
 ---
 
 一份C大程的随意笔记

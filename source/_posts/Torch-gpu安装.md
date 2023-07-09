@@ -1,11 +1,12 @@
 ---
 title: Torch-gpu安装
-date: 2022-08-24 11:09:26
 tags:
-    - python
-    - torch-gpu
+  - python
+  - torch-gpu
 categories:
-    - 技术记录
+  - 技术记录
+abbrlink: 506bf8d8
+date: 2022-08-24 11:09:26
 ---
 
 python默认安装的torch是cpu版的，无法使用gpu进行训练。这边简单记录一下torch-gpu安装方法。
