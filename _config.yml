@@ -141,3 +141,6 @@ markdown:
     prepend_root: true
     post_asset: true
   inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
+
+# hexo-all-minifier
+all_minifier: true

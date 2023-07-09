@@ -9,6 +9,10 @@ abbrlink: ad4f1e09
 date: 2022-12-11 14:43:00
 ---
 
+一些oop的笔记
+
+<!--more-->
+
 ## Template
 
 ```

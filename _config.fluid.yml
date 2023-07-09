@@ -1072,25 +1072,25 @@ static_prefix:
 
   typed: https://lib.baomitu.com/typed.js/2.0.12/
 
-  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
+  fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
 
-  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
+  nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
 
-  mathjax: https://lib.baomitu.com/mathjax/3.2.2/
+  mathjax: https://cdn.staticfile.org/mathjax/3.2.2/
 
   katex: https://lib.baomitu.com/KaTeX/0.16.2/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://lib.baomitu.com/clipboard.js/2.0.11/
+  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.11/
 
   mermaid: https://lib.baomitu.com/mermaid/8.14.0/
 
-  valine: https://lib.baomitu.com/valine/1.5.1/
+  valine: https://cdn.staticfile.org/valine/1.5.1/
 
   waline: https://cdn.staticfile.org/waline/2.15.5/
 
-  gitalk: https://lib.baomitu.com/gitalk/1.8.0/
+  gitalk: https://cdn.staticfile.org/gitalk/1.8.0/
 
   disqusjs: https://lib.baomitu.com/disqusjs/1.3.0/
 
@@ -1098,4 +1098,4 @@ static_prefix:
 
   discuss: https://lib.baomitu.com/discuss/1.2.1/
 
-  hint: https://lib.baomitu.com/hint.css/2.7.0/
+  hint: https://cdn.staticfile.org/hint.css/2.7.0/

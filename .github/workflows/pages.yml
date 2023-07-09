@@ -33,6 +33,8 @@ jobs:
         run: npm un hexo-renderer-marked --save
       - name: Install hexo-renderer-markdown-it
         run: npm i hexo-renderer-markdown-it --save
+      - name: Install hexo-all-minifier
+        run: npm install hexo-all-minifier --save
       - name: Build
         run: npm run build
       - name: Deploy
