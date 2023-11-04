@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>部分笔记搬迁至note页面</title>
+    <link href="/posts/ccf01dfa/"/>
+    <url>/posts/ccf01dfa/</url>
+    
+    <content type="html"><![CDATA[<p>由于博客分类较为混乱，因此将部分笔记迁移至note页面</p><span id="more"></span><p>部分笔记内容迁移至<a href="https://note.camel-zy.top">笔记</a>页面，博客仅用于存储一些乱七八糟的记录。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>说明</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>mkdocs</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>关闭Windows搜索框的热门搜索</title>
+    <link href="/posts/9fd7eb26/"/>
+    <url>/posts/9fd7eb26/</url>
+    
+    <content type="html"><![CDATA[<p>不知道什么时候开始win10搜索框右下角出现了一个热门搜索的广告。</p><span id="more"></span><p>只需执行以下命令添加注册表项目，重启即可关闭。</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">reg add HKCU\Software\Policies\Microsoft\Windows\explorer <span class="token operator">/</span>v DisableSearchBoxSuggestions <span class="token operator">/</span>t reg_dword <span class="token operator">/</span>d 1 <span class="token operator">/</span>f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p><a href="https://www.winhelponline.com/blog/disable-explorer-search-box-suggestions-windows-7/">参考博客</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Windows</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Torch-gpu安装</title>
+    <link href="/posts/506bf8d8/"/>
+    <url>/posts/506bf8d8/</url>
+    
+    <content type="html"><![CDATA[<p>python默认安装的torch是cpu版的，无法使用gpu进行训练。这边简单记录一下torch-gpu安装方法。</p><span id="more"></span><p>nvidia-smi查看cuda版本</p><p>在<a href="https://pytorch.org/get-started/locally/#no-cuda-1">官网</a>生成安装链接进行安装</p><p>注意安装前先把原来的torch删了 然后安装的时候不要用清华镜像。</p><p>后面加-i <a href="https://pypi.org/simple">https://pypi.org/simple</a></p><hr><p>代码里用print(torch.<strong>version</strong>)查看torch版本</p><p>显示1.10.2+cpu 即为cpu版本 显示1.11.0+cu113即为gpu版本</p><figure><div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>device_count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><p>查看可用gpu数量和可用状态</p><hr><p>安装CUDA Toolkit <a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p><p>安装CUDNN <a href="https://developer.nvidia.com/%5Brdp%5D(https://so.csdn.net/so/search?q=rdp&amp;spm=1001.2101.3001.7020)/cudnn-download">https://developer.nvidia.com/[rdp](https://so.csdn.net/so/search?q=rdp&amp;spm=1001.2101.3001.7020)/cudnn-download</a></p><p><a href="https://www.bilibili.com/video/BV1Rz411e7eJ?spm_id_from=333.999.0.0&amp;vd_source=f6a9c6152995529b9a7e52ad6f79a2d6">教程视频</a></p><hr><p>可用以后代码中有的没的地方加点.cuda() .cpu() 进行CPU GPU数据交换即可使用GPU来训练人工智能</p><p><a href="http://www.codebaoku.com/it-python/it-python-248324.html">http://www.codebaoku.com/it-python/it-python-248324.html</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+      <tag>torch-gpu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windows Terminal美化</title>
+    <link href="/posts/f7a47aab/"/>
+    <url>/posts/f7a47aab/</url>
+    
+    <content type="html"><![CDATA[<p>适当的美化可以使Windows Terminal变得同样赏心悦目。</p><span id="more"></span><h1>Windows Terminal</h1><p>微软于19年发布的这个<a href="https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab">Windows Terminal</a>集成了PowerShell、CMD、WSL等，而且比较美观。</p><p>当然，默认设置下的Windows Terminal比较朴素，需要亿点点的美化。</p><blockquote><p>以下内容均在PowerShell 7下运行</p></blockquote><h1>oh-my-posh</h1><p><a href="https://ohmyposh.dev/">oh-my-posh</a>是一款主题管理工具，可直接在<a href="https://apps.microsoft.com/store/detail/XP8K0HKJFRXGCK">微软商店</a>中进行安装。</p><p>安装完成后，使用命令</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">oh-my-posh init pwsh <span class="token punctuation">|</span> <span class="token function">Invoke-Expression</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>进行初始化</p><h2 id="字体安装">字体安装</h2><p>oh my posh 使用的图标来自于<a href="https://www.nerdfonts.com/">Nerd Fonts</a>字体，因此为了更好的显示效果，需要安装相关的字体。其中官方建议安装<a href="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip">Meslo LGM NF</a>字体。</p><p>字体安装完成后，需要对配置终端使用字体。在终端按下默认快捷键<code>Ctrl+Shift+,</code>打开<code>settings.json</code>文件，在&quot;profiles&quot;中添加如下内容：</p><figure><div class="code-wrapper"><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"profiles"</span><span class="token operator">:</span>    <span class="token punctuation">&#123;</span>        <span class="token property">"defaults"</span><span class="token operator">:</span>        <span class="token punctuation">&#123;</span>            <span class="token property">"font"</span><span class="token operator">:</span>            <span class="token punctuation">&#123;</span>                <span class="token property">"face"</span><span class="token operator">:</span> <span class="token string">"MesloLGM NF"</span>            <span class="token punctuation">&#125;</span>        <span class="token punctuation">&#125;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure><h2 id="主题选择">主题选择</h2><p>美化终端界面，当然需要选择喜欢的主题。</p><p>使用命令</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-PoshThemes</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>获取所有支持的主题。</p><p>选定主题后，打开配置文件(这个文件里的内容会在每次打开终端时自动运行)</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">code <span class="token variable">$PROFILE</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>当然这里使用notebad之类的也可以</p><p>在文件中加上这么一句：</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">oh-my-posh init pwsh <span class="token operator">--</span>config ~<span class="token operator">/</span><span class="token punctuation">.</span>peru<span class="token punctuation">.</span>omp<span class="token punctuation">.</span>json <span class="token punctuation">|</span> <span class="token function">Invoke-Expression</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>其中peru为选择的主题</p><p>配置完成后使用</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token punctuation">.</span> <span class="token variable">$PROFILE</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>重新加载配置</p><h2 id="遇到的问题">遇到的问题</h2><h3 id="选择主题后没有变化">选择主题后没有变化</h3><p>只需要把配置的那句话改为</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">oh-my-posh init pwsh <span class="token operator">--</span>config <span class="token string">"C:\Program Files (x86)\oh-my-posh\themes\peru.omp.json"</span> <span class="token punctuation">|</span> <span class="token function">Invoke-Expression</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>使用绝对路径就可以了</p><h3 id="终端内无法使用代理下载">终端内无法使用代理下载</h3><p>在配置文件($PROFILE)中加上</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token variable">$Env</span>:http_proxy=<span class="token string">"http://127.0.0.1:7890"</span><span class="token punctuation">;</span><span class="token variable">$Env</span>:https_proxy=<span class="token string">"http://127.0.0.1:7890"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><p>即可。(其中7890为clash端口号)</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Windows</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>windows</tag>
+      
+      <tag>terminal</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windows下使用neofetch</title>
+    <link href="/posts/d1aa9b96/"/>
+    <url>/posts/d1aa9b96/</url>
+    
+    <content type="html"><![CDATA[<p>闲得无聊在Windows下也整个neofetch</p><span id="more"></span><h1>neofetch</h1><p>获取scoop(一个包管理器)</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">iwr</span> <span class="token operator">-</span>useb get<span class="token punctuation">.</span>scoop<span class="token punctuation">.</span>sh <span class="token punctuation">|</span> <span class="token function">iex</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>获取neofetch</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">scoop install neofetch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><h1>ScreenFetch</h1><p>还有一个功能类似的玩意：ScreenFetch</p><p>在PowerShell 5中，直接安装ScreenFetch即可使用</p><figure><div class="code-wrapper"><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Install-Module</span> <span class="token operator">-</span>Name windows-screenfetch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>然而这样的安装在PowerShell 7中会有问题 无法正常使用</p><p>一个可行的解决方法：</p><p>在<code>Windows PowerShell 5</code>中安装<code>windows-screenfetch</code></p><p>将<code>C:\Program Files\WindowsPowerShell\Modules\windows-screenfetch</code>复制到<code>C:\Users\&lt;username&gt;\Documents\PowerShell\Modules</code>下</p><p>从<a href="https://github.com/JulianChow94/Windows-screenFetch">Github仓库</a>中获取最新的<a href="Data.psm1">Data.psm1文件</a>，替换原有的<code>Data.psm1</code>，重启PowerShell后即可使用ScreenFetch</p><p>此方法来自<a href="https://blog.csdn.net/yihuajack/article/details/106234124">博客</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Windows</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>windows</tag>
+      
+      <tag>neofetch</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu无法使用2.4G无线鼠标</title>
+    <link href="/posts/c30d67ca/"/>
+    <url>/posts/c30d67ca/</url>
+    
+    <content type="html"><![CDATA[<p>由于最近电脑蓝牙不太稳定，想使用2.4G无线鼠标，但是没有反应。</p><span id="more"></span><p>这边记录下解决过程：</p><ol><li><p>移除USB</p></li><li><p>终端运行命令</p></li></ol><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> modprobe <span class="token parameter variable">-r</span> usbhid<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><ol start="3"><li>重新插入USB</li></ol><p>反正就解决了 大概就是把可载入模块删了重装吧</p><p>中文资料没有找到，具体解决方案可以看<a href="https://askubuntu.com/questions/172533/why-my-wireless-mouse-doesnt-work-in-ubuntu">这里</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>wireless mouse</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu设置充电上限</title>
+    <link href="/posts/400346f0/"/>
+    <url>/posts/400346f0/</url>
+    
+    <content type="html"><![CDATA[<p>在Windows下，天选2可以直接在华硕服务中设置充电上限，所以在ubuntu下也有了这个需求。</p><span id="more"></span><p>在经历过一些失败后(包括但不限于使用TLP)，终于找到了限制充电上限的方法。</p><p>使用<a href="https://github.com/tshakalekholoane/bat">bat</a>就行啦</p><h1>安装</h1><p>下载bat(二进制文件)后，进行安装</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">install</span> bat /usr/local/bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><h1>查看阈值</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bat <span class="token parameter variable">-t</span><span class="token comment"># bat --threshold</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h1>设置阈值</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> bat <span class="token parameter variable">-t</span> <span class="token operator">&lt;</span>CHARGE_THRESHOULD<span class="token operator">></span><span class="token comment"># sudo bat --threshold &lt;CHARGE_THRESHOULD></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h1>永久修改</h1><p>默认状态下，设置后的阈值会在重启后失效，恢复默认状态。</p><p>使用以下指令可以永久修改阈值：</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> bat <span class="token parameter variable">-p</span><span class="token comment"># sudo bat --persist</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h1>重置阈值</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> bat <span class="token parameter variable">-r</span><span class="token comment"># bat --reset</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h1>查看当前电量</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bat <span class="token parameter variable">-c</span><span class="token comment"># bat --capacity</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h1>查看充电状态</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bat <span class="token parameter variable">-s</span><span class="token comment"># bat --status</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><p>不过其实我在使用这个命令后显示的是<code>unknown</code>，不知道为什么。</p><p>但是可以通过观察笔记本上的充电指示灯来判断状态，这也无伤大雅。</p><p>总的来说非常简单，具体原文可以看<a href="https://www.linuxuprising.com/2021/06/easily-set-charging-thresholds-for-asus.html">这里</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>battery</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Gitee自动部署</title>
+    <link href="/posts/38df26a2/"/>
+    <url>/posts/38df26a2/</url>
+    
+    <content type="html"><![CDATA[<p>众所周知 Gitee自动部署功能是Gitee Pages Pro的功能。</p><span id="more"></span><p>所以就有了<a href="https://github.com/marketplace/actions/gitee-pages-action#gitee-pages-action">Gitee Pages Action</a>这个项目。</p><p>按照说明一步步配就行，配置示例已经写的非常清晰。</p><p>遇到问题再来记录吧。</p><p>(所以我这只是水一篇博客而已</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>gitee</tag>
+      
+      <tag>github</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu软件源</title>
+    <link href="/posts/d3324647/"/>
+    <url>/posts/d3324647/</url>
+    
+    <content type="html"><![CDATA[<p>之前源文件被我改得乱七八糟，现在重新恢复为官方源文件，顺便做个备份。</p><span id="more"></span><p>软件源文件位置：<code>/etc/apt/sources.list</code></p><p>官方源文件备份</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># deb cdrom:[Ubuntu 20.04.3 LTS _Focal Fossa_ - Release amd64 (20210819)]/ focal main restricted</span><span class="token comment"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</span><span class="token comment"># newer versions of the distribution.</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal main restricted<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal main restricted</span><span class="token comment">## Major bug fix updates produced after the final release of the</span><span class="token comment">## distribution.</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal-updates main restricted<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal-updates main restricted</span><span class="token comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span><span class="token comment">## team. Also, please note that software in universe WILL NOT receive any</span><span class="token comment">## review or updates from the Ubuntu security team.</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal universe<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal universe</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal-updates universe<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal-updates universe</span><span class="token comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu </span><span class="token comment">## team, and may not be under a free licence. Please satisfy yourself as to </span><span class="token comment">## your rights to use the software. Also, please note that software in </span><span class="token comment">## multiverse WILL NOT receive any review or updates from the Ubuntu</span><span class="token comment">## security team.</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal multiverse<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal multiverse</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal-updates multiverse<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal-updates multiverse</span><span class="token comment">## N.B. software from this repository may not have been tested as</span><span class="token comment">## extensively as that contained in the main release, although it includes</span><span class="token comment">## newer versions of some applications which may provide useful features.</span><span class="token comment">## Also, please note that software in backports WILL NOT receive any review</span><span class="token comment">## or updates from the Ubuntu security team.</span>deb http://mirrors.zju.edu.cn/ubuntu/ focal-backports main restricted universe multiverse<span class="token comment"># deb-src http://mirrors.zju.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><span class="token comment">## Uncomment the following two lines to add software from Canonical's</span><span class="token comment">## 'partner' repository.</span><span class="token comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span><span class="token comment">## respective vendors as a service to Ubuntu users.</span><span class="token comment"># deb http://archive.canonical.com/ubuntu focal partner</span><span class="token comment"># deb-src http://archive.canonical.com/ubuntu focal partner</span>deb http://security.ubuntu.com/ubuntu focal-security main restricted<span class="token comment"># deb-src http://security.ubuntu.com/ubuntu focal-security main restricted</span>deb http://security.ubuntu.com/ubuntu focal-security universe<span class="token comment"># deb-src http://security.ubuntu.com/ubuntu focal-security universe</span>deb http://security.ubuntu.com/ubuntu focal-security multiverse<span class="token comment"># deb-src http://security.ubuntu.com/ubuntu focal-security multiverse</span><span class="token comment"># This system was installed using small removable media</span><span class="token comment"># (e.g. netinst, live or single CD). The matching "deb cdrom"</span><span class="token comment"># entries were disabled at the end of the installation process.</span><span class="token comment"># For information about how to configure apt package sources,</span><span class="token comment"># see the sources.list(5) manual.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure><p><a href="https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11MBcu4I">Ubuntu阿里云镜像</a></p><p>只需将文件中<code>archive.ubuntu.com</code>替换为<code>mirrors.aliyun.com</code>即可。</p><p>ps:使用<code>code sources.list</code>可在vscode中打开文件。</p><p>替换为ZJU镜像同理。<a href="http://mirrors.zju.edu.cn/">http://mirrors.zju.edu.cn/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu控制笔记本性能释放</title>
+    <link href="/posts/ee10d497/"/>
+    <url>/posts/ee10d497/</url>
+    
+    <content type="html"><![CDATA[<p>在使用Ubuntu时发现性能无法得到完全释放，风扇转速也十分有限。</p><span id="more"></span><p>型号：华硕 天选2</p><h1>一、问题描述</h1><p>在Win10中，电脑可使用Fn+F5切换性能释放模式（静音、平衡、增强），因此有了在Ubuntu下调整模式的想法。</p><h1>二、一些尝试</h1><p>参照网络某些博客使用lm-sensors后，发现找不到可调节的风扇，并没有达到预期效果。</p><h1>三、解决方式</h1><p>这种方式应该仅限于华硕笔记本。</p><blockquote><p>In Kernel 5.6 there is a fan mode for asus laptops, check if you have /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy 2 - Silent, 0 - Balance, 1 - Turbo, similar to the modes in armoury crate on windows.</p></blockquote><p>在/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy内存储的数字即为当前模式：</p><p>其中默认的0代表平衡模式，1代表增强模式，2代表静音模式。</p><p>所以解决方法就很简单啦 修改该文件的值即可。</p><p>在这边也简单记录下命令。</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">su</span>  <span class="token comment"># 需要权限</span><span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">></span> /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy <span class="token comment"># 切换为增强模式</span><span class="token builtin class-name">echo</span> <span class="token number">0</span> <span class="token operator">></span> /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy <span class="token comment"># 切换为平衡模式</span><span class="token builtin class-name">echo</span> <span class="token number">2</span> <span class="token operator">></span> /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy <span class="token comment"># 切换为静音模式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure><p>嫌命令麻烦的话也可以看看这个<a href="https://github.com/leonmaxx/asus_fanmode">仓库</a>，不过我没试过。</p><h1>四、参考资料</h1><p><a href="https://askubuntu.com/questions/1254364/how-to-control-fans-on-an-asus-laptop?newreg=90b0e4d9f8ce481fa9370b5544606c8d">How to control fans on an asus laptop</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>从零开始使用浙江大学自动健康打卡</title>
+    <link href="/posts/70a7c4e7/"/>
+    <url>/posts/70a7c4e7/</url>
+    
+    <content type="html"><![CDATA[<p>由于目前一天不打卡就会被取消蓝码，所以大家对自动打卡的需求也就越来越高。</p><span id="more"></span><p>为节约每天重复的打卡时间，也尽可能避免忘记打卡造成的麻烦，自动打卡应运而生。</p><p>为了降低自动打卡的使用门槛，所以就有了这份胎教级教程，从零开始实现自动健康打卡。</p><p>顺带一提，目前github上的自动打卡在众多开发者的努力下功能已较为完善，稳定性也比最初提升了不少。</p><h1>〇、特别声明</h1><p><strong>本文禁止任何形式的转载。</strong></p><p>本文仅用于学习交流使用，请严格遵守校纪校规，如实上报健康状态。对一切非法使用所产生的后果概不负责。</p><p>若本文侵犯到您的利益请联系我删除。</p><h1>一、注册github</h1><blockquote><p>神说：要有github。</p></blockquote><p>作为世界上最大的<s>同性交友网站</s>代码托管平台，github上超2亿代码库。我目前是用的自动打卡也是来自于此。</p><p>打开<a href="https://github.com/">github</a>，点击右上角的Sign Up 根据提示完成注册即可。（国内访问github可能不稳定，若无法访问可以过一段时间再试。如果有魔法的话访问速度会快一点<img src="/posts/70a7c4e7/signup.png" alt="" loading="lazy"></p><h1>二、 Fork自动健康打卡仓库</h1><p>完成注册并登录后，打开<a href="https://github.com/GCS-ZHN/AutoCard">自动健康打卡仓库</a>，我目前使用的就是这个AutoCard仓库。</p><p>然后点击右上角的Fork，也就是将代码复制到自己的仓库。然后点击create fork</p><p><img src="/posts/70a7c4e7/fork.png" alt="" loading="lazy"></p><p><img src="/posts/70a7c4e7/createfork.png" alt="" loading="lazy"></p><p>页面跳转后，若红框处左上角为你的用户名，且下面有一行fork from什么的小字，则说明fork已完成。</p><p><img src="/posts/70a7c4e7/afterfork.png" alt="" loading="lazy"></p><h1>三、钉钉推送</h1><p>因为自动打卡可能会失败，需要你每天关注一下有没有打卡成功，所以需要开个钉钉推送功能。</p><p>首先随便新建个群，用于消息推送。</p><p>然后在<strong>电脑端</strong>（你前面不会一直是在手机上操作的吧）打开钉钉的那个群，点右上角群设置-&gt;智能群助手-&gt;添加机器人-&gt;设置</p><p><img src="/posts/70a7c4e7/dinggroup.png" alt="" loading="lazy"></p><p><img src="/posts/70a7c4e7/dingaddbot.png" alt="" loading="lazy"></p><p>点击自定义-&gt;添加</p><p><img src="/posts/70a7c4e7/customedbot.png" alt="" loading="lazy"></p><p>机器人名字可随便写，但注意<strong>勾选加签</strong>，并点击下面的复制按钮复制生成的密钥，找个地方记录下，等会要用</p><p><img src="/posts/70a7c4e7/createbot.png" alt="" loading="lazy"></p><p>点击完成后，点击复制按钮复制生成的Webhook，找个地方记录下，等会要用</p><p><img src="/posts/70a7c4e7/finishbot.png" alt="" loading="lazy"></p><h1>四、仓库设置</h1><h2 id="添加Secrets">添加Secrets</h2><p>回到刚才你的仓库，点击Settings-&gt;Secrets&gt;Actions</p><p><img src="/posts/70a7c4e7/settings.png" alt="" loading="lazy"></p><p>点击New repository secret</p><p><img src="/posts/70a7c4e7/newsecret.png" alt="" loading="lazy"></p><p>Name中填写<strong>AUTOCARD_USER</strong> Value中填写你的浙大通行证账号 然后点击Add secret</p><p><img src="/posts/70a7c4e7/addsecret.png" alt="" loading="lazy"></p><p>重复上述两步操作继续添加secret 其中Name和Value参照以下表格</p><p>那个<strong>AUTOCARD_CACHE_FLAG</strong>的Value填<code>1</code>即可</p><table><thead><tr><th>Name</th><th>Value</th><th>备注</th></tr></thead><tbody><tr><td><strong>AUTOCARD_USER</strong></td><td>浙大通行证账号</td><td></td></tr><tr><td><strong>AUTOCARD_PWD</strong></td><td>浙大通行证密码</td><td></td></tr><tr><td><strong>AUTOCARD_DINGTALK_URL</strong></td><td>第三步中记录的Webhook</td><td></td></tr><tr><td><strong>AUTOCARD_DINGTALK_SECRET</strong></td><td>第三步中记录的密钥</td><td></td></tr><tr><td><strong>AUTOCARD_CACHE_FLAG</strong></td><td><code>1</code></td><td>用于程序缓存输出提供一个索引，任意值即可</td></tr><tr><td><strong>AUTOCARD_MAX_TRIAL</strong></td><td><code>5</code></td><td>打卡失败后重试次数</td></tr><tr><td><strong>AUTOCARD_DELAY</strong></td><td><code>0</code></td><td>是否随机延迟打卡</td></tr></tbody></table><h2 id="可选项：打卡时间修改">可选项：打卡时间修改</h2><p>回到code页面，点击红框中的workflow</p><p><img src="/posts/70a7c4e7/githubcode.png" alt="" loading="lazy"></p><p>点击schedule.yml</p><p><img src="/posts/70a7c4e7/schedule.png" alt="" loading="lazy"></p><p>点击右侧的笔</p><p><img src="/posts/70a7c4e7/ymlpen.png" alt="" loading="lazy"></p><p>修改此处的cron即可修改每日打卡的时间，例如我将这个改为了<code>- cron: '20 16,0  * * *'</code>，即协调世界时的每天16:20和00:20尝试打卡一次。（每天打两次是双保险，自动打卡有可能会失败） 具体cron语法可以自行查询</p><p>修改完后点击Start commit -&gt; Commit changes 即可</p><p>修改完后点击Start commit -&gt; Commit changes 即可</p><p><img src="/posts/70a7c4e7/commit.png" alt="" loading="lazy"></p><h2 id="启动Actions">启动Actions</h2><p>点击上方Actions，并点击绿框启用Actions</p><p><img src="/posts/70a7c4e7/actions.png" alt="" loading="lazy"></p><p>点击左边的schedule 再点击右边的enable workflow</p><p><img src="/posts/70a7c4e7/enableworkflow.png" alt="" loading="lazy"></p><p>此时已完成设置。</p><h2 id="测试一下下">测试一下下</h2><p>看到仓库右上角的小星星没</p><p><img src="/posts/70a7c4e7/star.png" alt="" loading="lazy"></p><p>下面要跟着做呦</p><p>点一下这个小星星，它会变亮。</p><p>再点一下，它就灭了。</p><p><s>这真的不是单纯为了逗你玩 其实是为了让Action跑一遍</s></p><p>这边这个黄圈就意味着已经在运行啦</p><p><img src="/posts/70a7c4e7/running.png" alt="" loading="lazy"></p><p>稍等一会，这个东西可能有点慢。</p><p>过一段时间看看钉钉刚才那个群里有没有收到消息推送。</p><p>okk如果一切顺利的话应该就已经完成设置啦，记得每天看一下有没有打卡成功就行啦。</p><h1>五、部分问题处理</h1><p>如果不熟悉上述的这些东西的话，自动打卡出问题时可能处理起来也会比较困难。</p><p>那遇到问题怎么办呢？</p><p><s>自己看着办咯</s></p><p>可以康康下面的常见问题。</p><h2 id="代码库需要更新">代码库需要更新</h2><p>这个自动健康打卡的库有大佬在维护，时不时可能会需要更新。</p><p>辣么如何更新呢？</p><p>进入你的仓库Code页面 点击Fetch upstream。如果显示如下图的话就需要更新。</p><p><img src="/posts/70a7c4e7/merge.png" alt="" loading="lazy"></p><p>点击Fetch and merge 大概还需要再点个绿框 这样就可以啦。</p><p>无需更新的话是如下图所示。</p><p><img src="/posts/70a7c4e7/updated.png" alt="" loading="lazy"></p><h2 id="打卡失败-如何重新启动脚本？">打卡失败 如何重新启动脚本？</h2><p>一般来讲提示信息获取失败或者压根没推送信息那就说明自动打卡失败了。</p><p>进入你的仓库Actions界面 点击红框中的schedule</p><p><img src="/posts/70a7c4e7/fail.png" alt="" loading="lazy"></p><p>再点击Re-run all jobs -&gt; Re-run jobs</p><p><img src="/posts/70a7c4e7/rerun.png" alt="" loading="lazy"></p><p>即可重新运行一次。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>奇技淫巧</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>github</tag>
+      
+      <tag>script</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>在双系统中共享蓝牙</title>
+    <link href="/posts/d7c1fbdc/"/>
+    <url>/posts/d7c1fbdc/</url>
+    
+    <content type="html"><![CDATA[<p>双系统在切换系统后，蓝牙鼠标需要重新配对连接。</p><p>以下方法可解决这一问题</p><span id="more"></span><h1>前言</h1><p>首先简单解释下蓝牙在双系统中需要重新配对的原因：</p><p>蓝牙配对是根据设备的MAC地址和随机生成的密钥连接，同一设备的MAC地址相同但在双系统中随机生成的密钥不同，因此每次切换系统连接都需重新配对。</p><p>本文所提的方法原理为更改Linux下的密钥使之与Windows下的密钥相同。</p><h1>在Linux中配对蓝牙设备</h1><p>在Linux中配对蓝牙，从而在Linux中生成配置文件。</p><h1>在Windows中配对蓝牙设备</h1><p>在Windows中配对蓝牙，从而在Windows中生成配置文件。</p><h1>读取Windows下配置文件</h1><p>以下为方便起见采用在Linux下使用dumphive软件读取Windows下配置文件的方法</p><h2 id="获取dumphive">获取dumphive</h2><p>该软件目前已停止更新，源码可以在此<a href="https://gitorious.org/canaima-gnu-linux/dumphive">此镜像站</a>获取，或使用本站提供的<a href="canaima-gnu-linuxdumphive-90045ba.tar.gz">备份文件</a></p><h2 id="编译dumphive">编译dumphive</h2><p>该软件使用Free Pascal编写（这都是些什么古董），故需要Free Pascal编译器。</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> fpc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>然后进入到源码的src目录下</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>即可完成编译，得到dumphive文件。</p><h2 id="读取注册表">读取注册表</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mount</span> /dev/nvme0n1p3 /mnt          <span class="token comment"># nvme0n1p3 是 Windows 系统盘</span><span class="token builtin class-name">cd</span> /mnt/Windows/System32/config  ~/dumphive SYSTEM ~/system.reg  <span class="token comment"># 此处将dumphive至于~目录下</span><span class="token function">grep</span> <span class="token parameter variable">-Pn</span> <span class="token string">'BTHPORT.*(\\[\da-f]&#123;12&#125;)&#123;2&#125;'</span> ~/system.reg     <span class="token comment">#获取蓝牙配对相关信息</span><span class="token number">171486</span>:<span class="token punctuation">[</span>ROOT<span class="token punctuation">\</span>ControlSet001<span class="token punctuation">\</span>Services<span class="token punctuation">\</span>BTHPORT<span class="token punctuation">\</span>Parameters<span class="token punctuation">\</span>Keys<span class="token punctuation">\</span>ec2exxxxxxxx<span class="token punctuation">\</span>ed5fxxxxxx95<span class="token punctuation">]</span><span class="token comment"># 返回值最前面的数字即为此信息所在的行号</span><span class="token function">vim</span> ~/system.reg +171486    <span class="token comment"># 打开文件，并将光标移动到171486行，即可看到蓝牙配对相关信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure><h2 id="修改蓝牙配对信息">修改蓝牙配对信息</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">su</span><span class="token builtin class-name">cd</span> /var/lib/bluetooth/EC<span class="token punctuation">\</span>:2E<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX/   <span class="token comment"># 进入此电脑的蓝牙目录（文件名为电脑MAC地址）</span><span class="token builtin class-name">cd</span> ED<span class="token punctuation">\</span>:5F<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:94/  <span class="token comment"># 进入配对设备的目录（文件名为配对设备MAC地址）</span><span class="token comment"># 注：此时发现文件名与上面注册表中不同（末位可能不同） 需要更改文件名</span><span class="token comment"># 更改后</span><span class="token builtin class-name">cd</span> ED<span class="token punctuation">\</span>:5F<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:XX<span class="token punctuation">\</span>:95/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure><p>接下来根据注册表中内容和以下对应表格修改参数</p><table><thead><tr><th>Windows</th><th>Linux</th><th>参数格式修改</th></tr></thead><tbody><tr><td>LTK</td><td>[LongTermKey] Key</td><td>去逗号改大写</td></tr><tr><td>IRK</td><td>[IdentityResolvingKey] Key</td><td>去逗号改大写</td></tr><tr><td>EDIV</td><td>[LongTermKey] EDiv</td><td>十六进制转十进制</td></tr><tr><td>ERand</td><td>[LongTermKey] Rand</td><td>倒序十六进制转十进制</td></tr></tbody></table><p>特别注意：ERand需先倒序再转换进制</p><p>例如：</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token string">"ERand"</span><span class="token operator">=</span>hex<span class="token punctuation">(</span>b<span class="token punctuation">)</span>:55,8c,80,38,10,7f,e1,b7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>应先倒序相连变为<code>b7e17f1038808c55</code></p><p>再转十进制变为<code>13250011286344862805</code></p><h1>重启蓝牙</h1><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart bluetooth.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>此时即可自动完成蓝牙设备的配对连接。</p><p>贴一个<a href="https://blog.nanpuyue.com/2018/040.html">参考博客</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>windows</tag>
+      
+      <tag>bluetooth</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu无法识别无线网卡</title>
+    <link href="/posts/bdeaf517/"/>
+    <url>/posts/bdeaf517/</url>
+    
+    <content type="html"><![CDATA[<p>安装Ubuntu后惊奇地发现莫的Wi-Fi</p><span id="more"></span><p>品牌: 天选2 (ASUS TUF Gaming A15 FA506QM_FA506QM)</p><p>网卡: MediaTek MT7921</p><p>OS: Ubuntu 20.04.3 LTS x86_64</p><h1>问题:</h1><p>Ubuntu安装完成后，设置中无Wi-Fi选项卡，找不到无线网卡(好像没有驱动程序)</p><p>似乎只用在较新(2021.6)的电脑型号中会出现这类问题</p><h1>解决：</h1><p>(这问题着实困扰了我很久，一直都没法正常使用Ubuntu 连不上Wi-Fi也用不了蓝牙</p><p>为适配最新硬件，需要将Linux内核升级到最新</p><p>刚完成安装的Ubuntu 20.04.3 使用的是5.11内核，无法正常支持MT7921网卡</p><p>因此需要自行更新内核版本(可能有一定风险)</p><blockquote><p>可以暂时选择使用有线网络或者共享网络完成后续安装工作<br>我使用的是手机USB共享网络</p></blockquote><h2 id="查询内核版本">查询内核版本</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">uname</span> <span class="token parameter variable">-r</span><span class="token number">5.11</span>.0-36-generic<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h2 id="下载安装ubuntu-mainline-kernel-sh脚本">下载安装ubuntu-mainline-kernel.sh脚本</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh<span class="token function">sudo</span> <span class="token function">install</span> ubuntu-mainline-kernel.sh /usr/local/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><p>查看最新内核版本</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ubuntu-mainline-kernel.sh <span class="token parameter variable">-c</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>查看所有可用内核版本</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ubuntu-mainline-kernel.sh <span class="token parameter variable">-r</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><h2 id="安装新内核">安装新内核</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ubuntu-mainline-kernel.sh <span class="token parameter variable">-i</span>//或指定安装版本<span class="token function">sudo</span> ubuntu-mainline-kernel.sh <span class="token parameter variable">-i</span> <span class="token number">5.12</span>.11<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure><p>(亲测5.12.11版本内核仍无法解决问题 需要更新的内核版本)</p><p>在默认情况下 重启时系统会默认使用最新的内核</p><p>但也可以在启动系统时选择进入高级模式，指定所需要的内核</p><h2 id="安装固件文件">安装固件文件</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> linux-firmware<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>问题解决</p><p>不过注意关机后不要立即开机 等待半分钟到一分钟左右</p><p>不然两个系统都无法识别无线网卡(不知道为啥 但影响不大就不管它了)</p><h1>参考资料</h1><p><a href="https://miloserdov.org/?p=6899">https://miloserdov.org/?p=6899</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu默认图片查看器打开jpg图片出错</title>
+    <link href="/posts/4a4a39bc/"/>
+    <url>/posts/4a4a39bc/</url>
+    
+    <content type="html"><![CDATA[<p>图片文件无法打开问题</p><span id="more"></span><p><img src="/posts/4a4a39bc/OpenImageError.png" alt="" loading="lazy"></p><p>如图，打开图片文件时提示<strong>分析JPEG图像文件时出错(Not a JPEG file: starts with 0x89 0x50)</strong></p><p>0x89 0x50开头的文件可能为png格式</p><p>只需将后缀名改为.png即可使用默认图片查看器打开</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu下无法使用EasyConnect</title>
+    <link href="/posts/902eae3/"/>
+    <url>/posts/902eae3/</url>
+    
+    <content type="html"><![CDATA[<p>EasyConnect问题</p><span id="more"></span><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">zhang-yue@zhang-yue:~$ /usr/share/sangfor/EasyConnect/EasyConnect Gtk-Message: <span class="token number">12</span>:47:13.670: Failed to load module <span class="token string">"canberra-gtk-module"</span><span class="token punctuation">(</span>EasyConnect:26442<span class="token punctuation">)</span>: Pango-ERROR **: <span class="token number">12</span>:47:13.802: Harfbuzz version too old <span class="token punctuation">(</span><span class="token number">1.3</span>.1<span class="token punctuation">)</span>追踪与中断点陷阱 <span class="token punctuation">(</span>核心已转储<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure><h2 id="解决主要矛盾">解决主要矛盾</h2><p>错误提示信息是Harfbuzz版本过旧，但<a href="https://www.cnblogs.com/cocode/p/12890684.html">这篇博客</a>说其实是pango版本过新</p><p>所以需要降级pango 但又不能影响系统库 只需将相关依赖直接放在EasyConnect目录下</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">zhang-yue@zhang-yue:/usr/share/sangfor/EasyConnect$ ldd EasyConnect <span class="token operator">|</span> <span class="token function">grep</span> pangolibpangocairo-1.0.so.0 <span class="token operator">=</span><span class="token operator">></span> /lib/x86_64-linux-gnu/libpangocairo-1.0.so.0 <span class="token punctuation">(</span>0x00007f7fa0cee000<span class="token punctuation">)</span>libpango-1.0.so.0 <span class="token operator">=</span><span class="token operator">></span> /lib/x86_64-linux-gnu/libpango-1.0.so.0 <span class="token punctuation">(</span>0x00007f7fa0b54000<span class="token punctuation">)</span>libpangoft2-1.0.so.0 <span class="token operator">=</span><span class="token operator">></span> /lib/x86_64-linux-gnu/libpangoft2-1.0.so.0 <span class="token punctuation">(</span>0x00007f7f9eea9000<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure><p>不难发现，涉及到的so文件只有这么几个</p><p>只需到<a href="https://packages.ubuntu.com/">这里</a>下载相关<code>低版本</code>依赖(按照<a href="https://programmerah.com/error-report-when-running-under-easyconnect-linux-ubuntu-20-04-46024/">这里</a>的说法应该是低于1.42的版本即可)</p><blockquote><p><a href="https://packages.ubuntu.com/bionic-updates/libpango-1.0-0">libpango-1.0-0_1.40.14-1ubuntu0.1_amd64.deb</a></p></blockquote><blockquote><p><a href="https://packages.ubuntu.com/bionic-updates/libpangocairo-1.0-0">libpangocairo-1.0-0_1.40.14-1ubuntu0.1_amd64.deb</a></p></blockquote><blockquote><p><a href="https://packages.ubuntu.com/bionic-updates/libpangoft2-1.0-0">libpangoft2-1.0-0_1.40.14-1ubuntu0.1_amd64.deb</a></p></blockquote><p>解压后将***.so和***.so.***两个文件移入/usr/share/sangfor/EasyConnect/即可(这俩文件在解压后的data/usr/lib/x86_64-linux-gnu中)</p><p>(听说似乎.so文件相当于windows的.dll文件)</p><h2 id="还有一个小问题">还有一个小问题</h2><p>至此easyconnect总算是跑起来了 至少能看到图形界面了(心累)</p><p>然后就是来解决<code>Failed to load module &quot;canberra-gtk-module&quot;</code>的问题了</p><p>参考<a href="https://blog.csdn.net/h106140873/article/details/114263954">这里</a>的方法</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libcanberra-gtk-module<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>芜湖 终于完事了(就是不知为何这玩意打开的速度有点慢)</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>easyconnect</tag>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu终端命令笔记</title>
+    <link href="/posts/c327a/"/>
+    <url>/posts/c327a/</url>
+    
+    <content type="html"><![CDATA[<p>Ubuntu终端命令相关笔记</p><span id="more"></span><h1>系统相关</h1><h2 id="硬件架构">硬件架构</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">uname</span> <span class="token parameter variable">-a</span>arch//x86_64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>note</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu美化</title>
+    <link href="/posts/4d7d1fbc/"/>
+    <url>/posts/4d7d1fbc/</url>
+    
+    <content type="html"><![CDATA[<p>默认的主题有点丑 需要亿点点美化</p><span id="more"></span><h1>gnome</h1><p>安装相关工具</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> gnome-tweak-tool<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> gnome-shell-extensions<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> chrome-gnome-shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure><p><a href="https://extensions.gnome.org/">gnome官方插件中心</a></p><p>打开</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gnome-tweaks<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><blockquote><p>重启gnome只需alt+F2 输入r即可</p></blockquote><h1>插件</h1><ul><li>dash to dock</li></ul><blockquote><p>更改dock栏 需隐藏原有dock栏</p></blockquote><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /usr/share/gnome-shell/extensions<span class="token function">sudo</span> <span class="token function">mv</span> ubuntu-dock@ubuntu.com <span class="token punctuation">..</span>/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure><h1>主题</h1><p>GTK Theme: 构建应用程序的图形用户界面的框架</p><p>Gnome Shell Theme: Shell元素主题</p><p><a href="https://www.gnome-look.org/s/Gnome/browse/">gnome主题下载</a></p><p><a href="https://www.gnome-look.org/s/Gnome/p/1220749">Canta theme</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Ubuntu</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+      <tag>gnome</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+  
+  
+  <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>archives</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>categories</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[@font-face{font-family:"LXGW WenKai";src:"fonts/LXGWWenKai-Regular.ttf"}@font-face{font-family:"JetBrains Mono";src:"fonts/JetBrainsMono-Regular.ttf"}.markdown-body code{font-family:"JetBrains Mono","LXGW WenKai"!important}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>tags</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+</search>
